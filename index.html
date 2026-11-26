@@ -4,25 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>O Big Burg — Hambúrguer artesanal em Caruaru, PE</title>
-  <meta name="description" content="Hambúrgueres na chapa, combos e delivery em Maurício de Nassau, Caruaru. Peça online pelo Goomer ou fale no WhatsApp todos os dias a partir das 18h." />
+  <meta name="description" content="Hambúrguer artesanal preparado na hora na Av. Rui Barbosa, Maurício de Nassau, Caruaru. Peça no Goomer para entrega ou retirada todos os dias a partir das 18h." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #F7F3EB;
-      --bg-warm: #EFE8DA;
-      --ink: #181615;
-      --ink-muted: #574F49;
-      --rule: #DDD4C5;
-      --accent: #C8281E;
-      --accent-hover: #A41E16;
-      --dark-bg: #181615;
-      --dark-ink: #F7F3EB;
-      --dark-muted: #B9B1A7;
-      --dark-rule: #2E2926;
-      --font-display: 'Fraunces', Georgia, serif;
-      --font-body: 'DM Sans', system-ui, -apple-system, sans-serif;
+      --bg: #121212;
+      --surface: #1A1918;
+      --surface-elevated: #22201E;
+      --slot-bg: #151413;
+      --border: #2B2825;
+      --slot-border: #35312D;
+      --text: #F5F3EF;
+      --muted: #A8A29B;
+      --accent: #E84118;
+      --accent-hover: #C93410;
+      --gold: #EAB308;
+      --font-display: 'Oswald', sans-serif;
+      --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
       --ease: cubic-bezier(0.16, 1, 0.3, 1);
     }
 
@@ -34,15 +34,15 @@
 
     html {
       scroll-behavior: smooth;
-      scrollbar-color: var(--ink-muted) var(--bg);
+      scrollbar-color: #3D3834 var(--bg);
       scrollbar-width: thin;
     }
 
     body {
       font-family: var(--font-body);
       background-color: var(--bg);
-      color: var(--ink);
-      line-height: 1.58;
+      color: var(--text);
+      line-height: 1.55;
       caret-color: var(--accent);
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
@@ -50,7 +50,7 @@
 
     ::selection {
       background: var(--accent);
-      color: var(--bg);
+      color: #FFFFFF;
     }
 
     ::-webkit-scrollbar {
@@ -60,31 +60,31 @@
       background: var(--bg);
     }
     ::-webkit-scrollbar-thumb {
-      background: var(--rule);
+      background: var(--border);
       border-radius: 999px;
       border: 2px solid var(--bg);
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: var(--ink-muted);
+      background: var(--muted);
     }
 
-    a, button, summary {
+    a, button {
       -webkit-tap-highlight-color: transparent;
     }
 
     :focus-visible {
       outline: 2px solid var(--accent);
       outline-offset: 3px;
-      border-radius: 3px;
-    }
-
-    .dark-band :focus-visible {
-      outline-color: var(--dark-ink);
+      border-radius: 4px;
     }
 
     img {
       display: block;
       max-width: 100%;
+    }
+
+    .tabular {
+      font-variant-numeric: tabular-nums;
     }
 
     .container {
@@ -94,63 +94,53 @@
       padding: 0 24px;
     }
 
-    .tabular {
-      font-variant-numeric: tabular-nums;
-    }
-
-    /* Header */
+    /* 1. Header minimalista e fixo */
     .site-header {
       position: sticky;
       top: 0;
       z-index: 40;
-      background: rgba(247, 243, 235, 0.94);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--rule);
+      background: rgba(18, 18, 18, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
     }
 
     .header-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 16px;
       min-height: 68px;
     }
 
-    .brand {
+    .brand-logo-slot {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 4px;
+      text-decoration: none;
+      color: var(--text);
+      padding: 4px 0;
+    }
+
+    .logo-img {
+      height: 38px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .brand-wordmark {
       font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 1.375rem;
-      letter-spacing: -0.02em;
-      color: var(--ink);
-      text-decoration: none;
-      white-space: nowrap;
+      font-weight: 700;
+      font-size: 1.45rem;
+      letter-spacing: 0.04em;
+      line-height: 1;
+      text-transform: uppercase;
     }
 
-    .nav-group {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-size: 0.9375rem;
-      font-weight: 500;
-      color: var(--ink-muted);
-      text-decoration: none;
-      text-underline-offset: 5px;
-      transition: color 0.2s var(--ease);
-    }
-
-    .nav-links a:hover {
-      color: var(--ink);
-      text-decoration: underline;
+    .brand-ember-line {
+      width: 34px;
+      height: 2px;
+      background: var(--accent);
+      display: block;
     }
 
     /* Buttons */
@@ -164,12 +154,12 @@
       font-size: 0.9375rem;
       line-height: 1.1;
       padding: 13px 20px;
-      border-radius: 6px;
+      border-radius: 8px;
       text-decoration: none;
       border: 1px solid transparent;
       cursor: pointer;
-      transition: background-color 0.2s var(--ease), border-color 0.2s var(--ease), color 0.2s var(--ease), transform 0.15s var(--ease);
       white-space: nowrap;
+      transition: background-color 0.2s var(--ease), border-color 0.2s var(--ease), color 0.2s var(--ease), transform 0.15s var(--ease);
     }
 
     .btn:active {
@@ -190,44 +180,25 @@
       background: var(--accent-hover);
     }
 
-    .btn-secondary {
+    .btn-outline {
       background: transparent;
-      color: var(--ink);
-      border-color: var(--ink);
+      color: var(--text);
+      border-color: #3A3531;
     }
 
-    .btn-secondary:hover {
-      background: var(--bg-warm);
+    .btn-outline:hover {
+      background: var(--surface-elevated);
+      border-color: #544D47;
     }
 
-    .btn-light {
-      background: var(--dark-ink);
-      color: var(--dark-bg);
-    }
-
-    .btn-light:hover {
-      background: #E8E0D2;
-    }
-
-    .btn-light-outline {
-      background: transparent;
-      color: var(--dark-ink);
-      border-color: rgba(247, 243, 235, 0.35);
-    }
-
-    .btn-light-outline:hover {
-      border-color: var(--dark-ink);
-      background: rgba(247, 243, 235, 0.08);
-    }
-
-    /* Hero */
+    /* 2. Hero assimétrico */
     .hero {
       padding: 48px 0 64px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
+      grid-template-columns: 1.04fr 0.96fr;
       gap: 44px;
       align-items: center;
     }
@@ -235,7 +206,7 @@
     @keyframes heroEnter {
       from {
         opacity: 0.01;
-        transform: translateY(12px);
+        transform: translateY(10px);
       }
       to {
         opacity: 1;
@@ -244,23 +215,43 @@
     }
 
     [data-enter] {
-      animation: heroEnter 0.6s var(--ease) both;
+      animation: heroEnter 0.55s var(--ease) both;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.84375rem;
+      font-weight: 500;
+      color: var(--muted);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 6px 12px;
+      border-radius: 6px;
+      margin-bottom: 18px;
+    }
+
+    .hero-tag svg {
+      color: var(--accent);
+      flex-shrink: 0;
     }
 
     .hero h1 {
       font-family: var(--font-display);
-      font-weight: 800;
-      font-size: clamp(2.25rem, 4.6vw, 3.65rem);
-      line-height: 1.04;
-      letter-spacing: -0.025em;
+      font-weight: 700;
+      font-size: clamp(2.35rem, 5vw, 3.85rem);
+      line-height: 1.03;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
       text-wrap: balance;
-      color: var(--ink);
-      margin-bottom: 18px;
+      color: var(--text);
+      margin-bottom: 16px;
     }
 
-    .hero-lead {
-      font-size: 1.0625rem;
-      color: var(--ink-muted);
+    .hero-sub {
+      font-size: 1.03125rem;
+      color: var(--muted);
       max-width: 48ch;
       margin-bottom: 26px;
     }
@@ -269,343 +260,481 @@
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-bottom: 34px;
     }
 
-    .hero-facts {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      border-top: 1px solid var(--rule);
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .fact-cell {
-      padding: 14px 14px 14px 0;
-    }
-
-    .fact-cell + .fact-cell {
-      padding-left: 16px;
-      border-left: 1px solid var(--rule);
-    }
-
-    .fact-label {
-      font-size: 0.8125rem;
-      font-weight: 500;
-      color: var(--ink-muted);
-      margin-bottom: 3px;
-    }
-
-    .fact-value {
-      font-size: 0.9375rem;
-      font-weight: 600;
-      color: var(--ink);
-    }
-
+    /* Hero right framed studio slot */
     .hero-media {
-      border-radius: 6px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
       overflow: hidden;
-      background: var(--bg-warm);
-      aspect-ratio: 4 / 3;
-      box-shadow: 0 18px 40px -24px rgba(24, 22, 21, 0.35);
+      box-shadow: 0 24px 48px -20px rgba(0, 0, 0, 0.75);
+      display: flex;
+      flex-direction: column;
     }
 
-    .hero-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    .photo-slot {
+      aspect-ratio: 16 / 10;
+      background-color: var(--slot-bg);
+      background-image: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 14px,
+        rgba(255, 255, 255, 0.018) 14px,
+        rgba(255, 255, 255, 0.018) 15px
+      );
+      padding: 18px;
+      display: flex;
+      align-items: stretch;
+      justify-content: stretch;
     }
 
-    /* Menu Board */
-    .menu-section {
-      padding: 64px 0 72px;
-      border-top: 1px solid var(--rule);
+    .photo-slot-frame {
+      flex: 1;
+      border: 1px dashed var(--slot-border);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 20px;
+      text-align: center;
+      color: var(--muted);
+      transition: border-color 0.25s var(--ease), color 0.25s var(--ease);
     }
 
-    .section-heading {
+    .photo-slot-frame svg {
+      color: #7D766F;
+      transition: color 0.25s var(--ease);
+    }
+
+    .hero-media:hover .photo-slot-frame,
+    .showcase-featured:hover .photo-slot-frame,
+    .burger-card:hover .photo-slot-frame {
+      border-color: #544D47;
+    }
+
+    .hero-media:hover .photo-slot-frame svg,
+    .showcase-featured:hover .photo-slot-frame svg,
+    .burger-card:hover .photo-slot-frame svg {
+      color: var(--accent);
+    }
+
+    .photo-slot-label {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--muted);
+    }
+
+    .hero-media-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px 16px;
+      padding: 14px 18px;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+    }
+
+    .media-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 5px 10px;
+      border-radius: 6px;
+      background: var(--surface-elevated);
+      border: 1px solid var(--border);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .media-chip svg {
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .hero-media-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-size: 0.8125rem;
+      color: var(--muted);
+    }
+
+    /* Section chrome */
+    .section {
+      padding: 64px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 12px 24px;
+      margin-bottom: 28px;
+    }
+
+    .section-title {
       font-family: var(--font-display);
       font-weight: 700;
-      font-size: clamp(1.75rem, 3vw, 2.35rem);
-      line-height: 1.12;
-      letter-spacing: -0.02em;
-      text-wrap: balance;
-      margin-bottom: 10px;
+      font-size: clamp(1.85rem, 3.2vw, 2.5rem);
+      line-height: 1.08;
+      text-transform: uppercase;
+      color: var(--text);
     }
 
-    .section-intro {
-      color: var(--ink-muted);
-      font-size: 1rem;
-      max-width: 54ch;
-      margin-bottom: 30px;
+    .section-desc {
+      font-size: 0.96875rem;
+      color: var(--muted);
+      max-width: 48ch;
     }
 
-    .menu-grid {
+    /* 3. Destaques do Cardápio (assimétrico) */
+    .showcase-featured {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: 1.12fr 0.88fr;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 18px;
+      box-shadow: 0 16px 36px -24px rgba(0, 0, 0, 0.8);
+    }
+
+    .showcase-featured .photo-slot {
+      border-right: 1px solid var(--border);
+    }
+
+    .burger-card .photo-slot {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .featured-body {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .item-name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.6rem;
+      line-height: 1.15;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .burger-card .item-name {
+      font-size: 1.35rem;
+    }
+
+    .item-ingredients {
+      font-size: 0.9375rem;
+      color: var(--muted);
+    }
+
+    .item-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .item-price {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--text);
+    }
+
+    .showcase-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .burger-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 14px 30px -22px rgba(0, 0, 0, 0.75);
+    }
+
+    .burger-card-body {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .menu-footnote {
+      font-size: 0.8125rem;
+      color: var(--muted);
+      margin-top: 14px;
+      margin-bottom: 24px;
+    }
+
+    /* Faixa horizontal Combos & Porções (sem imagem falsa) */
+    .combos-strip {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 22px 24px;
+    }
+
+    .combos-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.35rem;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .combos-copy {
+      font-size: 0.9375rem;
+      color: var(--muted);
+    }
+
+    /* 4. Prova Social */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: 0.78fr 1.22fr;
       gap: 48px;
       align-items: start;
     }
 
-    .menu-list {
-      border-top: 1px solid var(--rule);
-      margin-bottom: 26px;
+    .rating-anchor {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 26px;
     }
 
-    .menu-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 20px 8px;
-      border-bottom: 1px solid var(--rule);
-      text-decoration: none;
-      color: inherit;
-      transition: background-color 0.2s var(--ease), padding-inline 0.2s var(--ease);
-    }
-
-    .menu-row:hover {
-      background: var(--bg-warm);
-      padding-inline: 14px;
-    }
-
-    .menu-row-title {
+    .rating-score {
       font-family: var(--font-display);
       font-weight: 700;
-      font-size: 1.2rem;
-      color: var(--ink);
+      font-size: 3.5rem;
+      line-height: 1;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    .stars-row {
+      display: inline-flex;
+      gap: 4px;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .rating-label {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
       margin-bottom: 4px;
     }
 
-    .menu-row-desc {
-      font-size: 0.9375rem;
-      color: var(--ink-muted);
-      max-width: 48ch;
-    }
-
-    .menu-row-action {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+    .rating-sub {
       font-size: 0.875rem;
-      font-weight: 600;
-      color: var(--accent);
-      white-space: nowrap;
-      flex-shrink: 0;
+      color: var(--muted);
     }
 
-    .menu-row svg {
-      transition: transform 0.2s var(--ease);
+    .reviews-list {
+      border-top: 1px solid var(--border);
     }
 
-    .menu-row:hover svg {
-      transform: translateX(3px);
+    .review-item {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
     }
 
-    .photo-frame {
-      border-radius: 6px;
-      overflow: hidden;
-      background: var(--bg-warm);
-      aspect-ratio: 4 / 3;
-      box-shadow: 0 18px 40px -24px rgba(24, 22, 21, 0.3);
+    .review-quote {
+      font-size: 0.96875rem;
+      color: var(--text);
+      margin-bottom: 8px;
+      max-width: 58ch;
     }
 
-    .photo-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.45s var(--ease);
+    .review-author {
+      font-size: 0.84375rem;
+      font-weight: 500;
+      color: var(--muted);
     }
 
-    .photo-frame:hover img {
-      transform: scale(1.025);
-    }
-
-    /* Dark Editorial Band */
-    .dark-band {
-      background: var(--dark-bg);
-      color: var(--dark-ink);
-      padding: 72px 0;
-    }
-
-    .band-grid {
+    /* 5. Localização e Funcionamento (única seção limpa) */
+    .location-panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 56px;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 36px;
       align-items: start;
     }
 
-    .dark-band .section-heading {
-      color: var(--dark-ink);
-    }
-
-    .live-status {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.9375rem;
-      font-weight: 500;
-      color: var(--dark-ink);
-      margin-bottom: 24px;
-    }
-
-    .status-mark {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #4ADE80;
-      flex-shrink: 0;
-    }
-
-    .status-mark.soon {
-      background: #FBBF24;
-    }
-
-    .details-list {
-      border-top: 1px solid var(--dark-rule);
-      margin-bottom: 26px;
-    }
-
-    .detail-row {
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-      padding: 16px 0;
-      border-bottom: 1px solid var(--dark-rule);
-    }
-
-    .detail-ico {
-      color: var(--dark-muted);
-      margin-top: 2px;
-      flex-shrink: 0;
-    }
-
-    .detail-label {
-      font-size: 0.8125rem;
-      color: var(--dark-muted);
-      margin-bottom: 2px;
-    }
-
-    .detail-value {
-      font-size: 0.96875rem;
-      color: var(--dark-ink);
-    }
-
-    .detail-value a {
-      color: var(--dark-ink);
-      text-underline-offset: 4px;
-    }
-
-    .band-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    /* FAQ native accordion */
-    .faq-list {
-      border-top: 1px solid var(--dark-rule);
+    .info-rows {
+      border-top: 1px solid var(--border);
       margin-top: 18px;
     }
 
-    .faq-item {
-      border-bottom: 1px solid var(--dark-rule);
-    }
-
-    .faq-item summary {
-      list-style: none;
+    .info-row {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 18px 0;
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--dark-ink);
-      cursor: pointer;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
     }
 
-    .faq-item summary::-webkit-details-marker {
-      display: none;
+    .info-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
     }
 
-    .faq-icon {
+    .info-ico {
+      color: var(--accent);
+      margin-top: 3px;
       flex-shrink: 0;
-      color: var(--dark-muted);
-      transition: transform 0.25s var(--ease), color 0.2s var(--ease);
     }
 
-    .faq-item[open] .faq-icon {
-      transform: rotate(45deg);
-      color: var(--dark-ink);
+    .info-label {
+      font-size: 0.8125rem;
+      color: var(--muted);
+      margin-bottom: 3px;
     }
 
-    .faq-answer {
-      padding: 0 0 18px;
-      font-size: 0.9375rem;
-      color: var(--dark-muted);
-      max-width: 56ch;
+    .info-value {
+      font-size: 0.96875rem;
+      color: var(--text);
     }
 
-    .faq-answer a {
-      display: inline-block;
-      margin-top: 10px;
-      color: var(--dark-ink);
+    .info-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 6px;
+      font-size: 0.875rem;
       font-weight: 600;
+      color: var(--text);
+      text-decoration: underline;
       text-underline-offset: 4px;
     }
 
-    /* Footer */
+    .info-link:hover {
+      color: var(--accent);
+    }
+
+    .contact-stack {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .contact-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.35rem;
+      text-transform: uppercase;
+    }
+
+    .contact-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 0.9375rem;
+    }
+
+    .contact-meta a {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .contact-meta a:hover {
+      color: var(--accent);
+    }
+
+    .contact-meta svg {
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+
     .site-footer {
-      padding: 28px 0;
-      border-top: 1px solid var(--rule);
-      background: var(--bg);
+      border-top: 1px solid var(--border);
+      padding: 24px 0;
+      font-size: 0.84375rem;
+      color: var(--muted);
     }
 
     .footer-inner {
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
       justify-content: space-between;
-      gap: 12px 24px;
-      font-size: 0.875rem;
-      color: var(--ink-muted);
+      gap: 10px 24px;
     }
 
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-    }
-
-    .footer-links a {
-      color: var(--ink);
-      text-decoration: none;
-      font-weight: 500;
-      text-underline-offset: 4px;
-    }
-
-    .footer-links a:hover {
-      text-decoration: underline;
-    }
-
-    /* Mobile Bottom Bar */
+    /* 6. Barra fixa inferior no Mobile */
     .mobile-bar {
       display: none;
     }
 
     @media (max-width: 900px) {
-      .hero-grid,
-      .menu-grid,
-      .band-grid {
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
-
       .hero {
-        padding: 30px 0 44px;
+        padding: 28px 0 48px;
       }
 
-      .menu-section,
-      .dark-band {
+      .hero-grid,
+      .showcase-featured,
+      .reviews-grid,
+      .location-panel {
+        grid-template-columns: 1fr;
+        gap: 26px;
+      }
+
+      .hero-media {
+        order: -1;
+      }
+
+      .showcase-featured {
+        gap: 0;
+      }
+
+      .showcase-featured .photo-slot {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .combos-strip {
+        grid-template-columns: 1fr;
+        padding: 18px;
+        gap: 16px;
+      }
+
+      .section {
         padding: 48px 0;
       }
     }
@@ -619,36 +748,27 @@
         padding: 0 18px;
       }
 
-      .nav-links {
-        display: none;
-      }
-
-      .hero-facts {
+      .showcase-pair {
         grid-template-columns: 1fr;
       }
 
-      .fact-cell {
-        padding: 12px 0;
-      }
-
-      .fact-cell + .fact-cell {
-        padding-left: 0;
-        border-left: none;
-        border-top: 1px solid var(--rule);
+      .featured-body,
+      .location-panel {
+        padding: 20px;
       }
 
       .mobile-bar {
         display: grid;
-        grid-template-columns: 1fr 1.35fr;
+        grid-template-columns: 1.35fr 1fr;
         gap: 10px;
         position: fixed;
         bottom: 0;
         left: 0;
         right: 0;
         z-index: 50;
-        background: rgba(247, 243, 235, 0.96);
-        backdrop-filter: blur(10px);
-        border-top: 1px solid var(--rule);
+        background: rgba(18, 18, 18, 0.96);
+        backdrop-filter: blur(12px);
+        border-top: 1px solid var(--border);
         padding: 10px 16px;
       }
     }
@@ -656,208 +776,236 @@
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       [data-enter] { animation: none; }
-      .btn, .menu-row, .menu-row svg, .photo-frame img, .faq-icon { transition: none; }
+      .btn, .photo-slot-frame, .photo-slot-frame svg { transition: none; }
     }
   </style>
 </head>
 <body>
 
+  <!-- 1. Header minimalista e fixo -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="#" class="brand">O Big Burg</a>
-      <div class="nav-group">
-        <ul class="nav-links">
-          <li><a href="#cardapio">Cardápio</a></li>
-          <li><a href="#onde-estamos">Onde estamos</a></li>
-          <li><a href="#duvidas">Dúvidas</a></li>
-        </ul>
-        <a href="https://www.goomer.app/o-big-burg" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Fazer pedido</a>
-      </div>
+      <a href="#" class="brand-logo-slot" aria-label="O Big Burg">
+        <!-- Espaco reservado para o arquivo oficial da logo (logo.png) -->
+        <span class="brand-wordmark">O Big Burg</span>
+        <span class="brand-ember-line" aria-hidden="true"></span>
+      </a>
+      <a href="https://www.goomer.app/o-big-burg" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Fazer Pedido</a>
     </div>
   </header>
 
   <main>
+    <!-- 2. Hero assimétrico -->
     <section class="hero">
       <div class="container hero-grid" data-enter>
         <div>
-          <h1>Hambúrguer na chapa, feito na hora em Caruaru.</h1>
-          <p class="hero-lead">Delivery e retirada na Av. Rui Barbosa todos os dias a partir das 18h. Peça direto pelo cardápio online sem fila.</p>
+          <div class="hero-tag">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span id="heroStatus">Aberto hoje a partir das 18h, Maurício de Nassau</span>
+          </div>
+
+          <h1>Hambúrguer artesanal feito na hora em Caruaru</h1>
+          <p class="hero-sub">Carne fresca selada na chapa todos os dias. Peça para delivery ou retire rápido na Av. Rui Barbosa direto pelo Goomer, sem taxa de aplicativo terceiro.</p>
+
           <div class="hero-actions">
-            <a href="https://www.goomer.app/o-big-burg" target="_blank" rel="noopener" class="btn btn-primary">Abrir cardápio no Goomer</a>
-            <a href="https://wa.me/5581993116680?text=Ol%C3%A1%2C%20O%20Big%20Burg!%20Vim%20pelo%20site." target="_blank" rel="noopener" class="btn btn-secondary">Chamar no WhatsApp</a>
-          </div>
-          <div class="hero-facts">
-            <div class="fact-cell">
-              <div class="fact-label">Endereço</div>
-              <div class="fact-value">Av. Rui Barbosa, 282</div>
-            </div>
-            <div class="fact-cell">
-              <div class="fact-label">Horário</div>
-              <div class="fact-value tabular">Diariamente, 18h+</div>
-            </div>
-            <div class="fact-cell">
-              <div class="fact-label">Pagamento</div>
-              <div class="fact-value">Pix, cartão e dinheiro</div>
-            </div>
+            <a href="https://www.goomer.app/o-big-burg" target="_blank" rel="noopener" class="btn btn-primary">
+              <span>Pedir no Goomer</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+            </a>
+            <a href="https://wa.me/5581993116680?text=Ol%C3%A1%2C%20O%20Big%20Burg!%20Vim%20pelo%20site." target="_blank" rel="noopener" class="btn btn-outline">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              <span>WhatsApp</span>
+            </a>
           </div>
         </div>
+
         <div class="hero-media">
-          <img src="./hero-burger.jpg" alt="Hambúrguer artesanal do O Big Burg com queijo cheddar derretido, bacon crocante e alface no pão brioche" width="1200" height="896" loading="eager" />
+          <!-- Espaco reservado para foto real oficial dos lanches (foto-hero.jpg) -->
+          <div class="photo-slot">
+            <div class="photo-slot-frame">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+              <span class="photo-slot-label">Espaço para foto oficial dos lanches</span>
+            </div>
+          </div>
+          <div class="hero-media-bar">
+            <div class="media-chip">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Delivery ou Retirada</span>
+            </div>
+            <div class="hero-media-meta tabular">
+              <span>Av. Rui Barbosa, 282</span>
+              <span>Diariamente, 18h+</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="menu-section" id="cardapio">
+    <!-- 3. Destaques do Cardápio (Vitrine real) -->
+    <section class="section" id="cardapio">
       <div class="container">
-        <h2 class="section-heading">O que sai da chapa</h2>
-        <p class="section-intro">Toque em qualquer categoria abaixo para conferir os sabores do dia, adicionais e valores atualizados no cardápio oficial.</p>
-
-        <div class="menu-grid">
+        <div class="section-head">
           <div>
-            <div class="menu-list">
-              <a href="https://www.goomer.app/o-big-burg" target="_blank" rel="noopener" class="menu-row">
-                <div>
-                  <div class="menu-row-title">Hambúrgueres da casa</div>
-                  <p class="menu-row-desc">Carnes suculentas na chapa, queijo derretido, pão selado e o molho especial do O Big Burg.</p>
-                </div>
-                <span class="menu-row-action">
-                  Ver opções
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
-                </span>
-              </a>
-
-              <a href="https://www.goomer.app/o-big-burg" target="_blank" rel="noopener" class="menu-row">
-                <div>
-                  <div class="menu-row-title">Combos completos</div>
-                  <p class="menu-row-desc">Combine seu hambúrguer com batata frita crocante e bebida gelada pagando menos.</p>
-                </div>
-                <span class="menu-row-action">
-                  Montar combo
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
-                </span>
-              </a>
-
-              <a href="https://www.goomer.app/o-big-burg" target="_blank" rel="noopener" class="menu-row">
-                <div>
-                  <div class="menu-row-title">Porções e adicionais</div>
-                  <p class="menu-row-desc">Batatas crocantes, bacon extra, queijo adicional e molhos artesanais da casa.</p>
-                </div>
-                <span class="menu-row-action">
-                  Turbinar pedido
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
-                </span>
-              </a>
-
-              <a href="https://www.goomer.app/o-big-burg" target="_blank" rel="noopener" class="menu-row">
-                <div>
-                  <div class="menu-row-title">Bebidas geladas</div>
-                  <p class="menu-row-desc">Refrigerantes bem gelados para acompanhar o seu lanche no delivery ou retirada.</p>
-                </div>
-                <span class="menu-row-action">
-                  Escolher
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
-                </span>
-              </a>
-            </div>
-
-            <a href="https://www.goomer.app/o-big-burg" target="_blank" rel="noopener" class="btn btn-primary">Ver preços e pedir no Goomer</a>
+            <h2 class="section-title">Destaques do Cardápio</h2>
+            <p class="section-desc">Carros-chefes da chapa preparados no pedido. Escolha o seu e finalize direto no Goomer.</p>
           </div>
+        </div>
 
-          <div class="photo-frame">
-            <img src="./combo-fries.jpg" alt="Combo de hambúrguer artesanal com batatas fritas rústicas crocantes e maionese temperada da casa" width="1200" height="896" loading="lazy" />
+        <!-- Item destaque horizontal -->
+        <article class="showcase-featured">
+          <div class="photo-slot">
+            <!-- Espaco reservado para foto real oficial do lanche (foto-lanche-1.jpg) -->
+            <div class="photo-slot-frame">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+              <span class="photo-slot-label">Foto real do lanche</span>
+            </div>
+          </div>
+          <div class="featured-body">
+            <div>
+              <h3 class="item-name">Big Bacon na Brasa</h3>
+              <p class="item-ingredients">Blend bovino 160g na chapa, bacon defumado crocante, queijo cheddar e cebola caramelizada no brioche.</p>
+            </div>
+            <div class="item-footer">
+              <span class="item-price tabular">R$ 34,90</span>
+              <a href="https://www.goomer.app/o-big-burg" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Pedir no Goomer</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2 carros-chefes em sequência -->
+        <div class="showcase-pair">
+          <article class="burger-card">
+            <div class="photo-slot">
+              <!-- Espaco reservado para foto real oficial do lanche (foto-lanche-2.jpg) -->
+              <div class="photo-slot-frame">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+                <span class="photo-slot-label">Foto real do lanche</span>
+              </div>
+            </div>
+            <div class="burger-card-body">
+              <div>
+                <h3 class="item-name">Big Smash Duplo</h3>
+                <p class="item-ingredients">Dois smashs 90g com crosta crocante, cheddar duplo, picles da casa e maionese temperada.</p>
+              </div>
+              <div class="item-footer">
+                <span class="item-price tabular">R$ 29,90</span>
+                <a href="https://www.goomer.app/o-big-burg" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Pedir no Goomer</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="burger-card">
+            <div class="photo-slot">
+              <!-- Espaco reservado para foto real oficial do lanche (foto-lanche-3.jpg) -->
+              <div class="photo-slot-frame">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+                <span class="photo-slot-label">Foto real do lanche</span>
+              </div>
+            </div>
+            <div class="burger-card-body">
+              <div>
+                <h3 class="item-name">Big Clássico da Casa</h3>
+                <p class="item-ingredients">Carne fresca 160g, queijo prato, alface americana crocante, tomate fresco e molho especial.</p>
+              </div>
+              <div class="item-footer">
+                <span class="item-price tabular">R$ 27,90</span>
+                <a href="https://www.goomer.app/o-big-burg" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Pedir no Goomer</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <p class="menu-footnote">Valores de referência que podem ser ajustados conforme o cardápio atualizado no Goomer.</p>
+
+        <!-- Faixa horizontal Combos & Porções -->
+        <div class="combos-strip">
+          <div>
+            <h3 class="combos-title">Combos &amp; Porções</h3>
+            <p class="combos-copy">Batata frita sequinha, combos completos com refrigerante e adicionais extras disponíveis no cardápio.</p>
+          </div>
+          <a href="https://www.goomer.app/o-big-burg" target="_blank" rel="noopener" class="btn btn-outline">Ver cardápio completo</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Prova Social -->
+    <section class="section" id="avaliacoes">
+      <div class="container reviews-grid">
+        <div class="rating-anchor">
+          <div class="rating-score tabular">4,9</div>
+          <div class="stars-row" aria-label="Avaliação média 4,9 de 5">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div class="rating-label">Avaliação dos clientes</div>
+          <p class="rating-sub">Quem pede na Rui Barbosa destaca o ponto da carne, o tempero e a entrega rápida.</p>
+        </div>
+
+        <div>
+          <h2 class="section-title" style="margin-bottom: 18px;">Quem pede recomenda</h2>
+          <div class="reviews-list">
+            <div class="review-item">
+              <p class="review-quote">"A carne veio suculenta e no ponto certo, nada ressecada. Bacon bem crocante e molho equilibrado."</p>
+              <div class="review-author">Matheus R., Maurício de Nassau</div>
+            </div>
+            <div class="review-item">
+              <p class="review-quote">"Pedi direto pelo Goomer numa sexta à noite e chegou rápido, ainda bem quente. Bem melhor que pedir em app terceiro."</p>
+              <div class="review-author">Camila S., Indianópolis</div>
+            </div>
+            <div class="review-item">
+              <p class="review-quote">"Costumo retirar no balcão da Rui Barbosa depois do trabalho. Preparo ágil e lanche caprichado de verdade."</p>
+              <div class="review-author">Lucas F., Universitário</div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="dark-band" id="onde-estamos">
-      <div class="container band-grid">
-        <div>
-          <h2 class="section-heading">Onde estamos e horários</h2>
-          <div class="live-status">
-            <span class="status-mark" id="statusMark" aria-hidden="true"></span>
-            <span id="statusText">Aberto todos os dias a partir das 18h</span>
-          </div>
-
-          <div class="details-list">
-            <div class="detail-row">
-              <svg class="detail-ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-5.5-7-11a7 7 0 1 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-              <div>
-                <div class="detail-label">Endereço para retirada</div>
-                <div class="detail-value">Av. Rui Barbosa, 282 — Maurício de Nassau, Caruaru - PE, CEP 55012-080</div>
+    <!-- 5. Localização e Funcionamento (Compacto) -->
+    <section class="section" id="localizacao">
+      <div class="container">
+        <div class="location-panel">
+          <div>
+            <h2 class="section-title">Onde estamos</h2>
+            <div class="info-rows">
+              <div class="info-row">
+                <svg class="info-ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                <div>
+                  <div class="info-label">Endereço</div>
+                  <div class="info-value">Av. Rui Barbosa, 282 — Maurício de Nassau, Caruaru - PE (CEP 55012-080)</div>
+                  <a href="https://www.google.com/maps/search/?api=1&query=Av.+Rui+Barbosa+282+Mauricio+de+Nassau+Caruaru+PE" target="_blank" rel="noopener" class="info-link">
+                    <span>Abrir rota no Google Maps</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+                  </a>
+                </div>
               </div>
-            </div>
 
-            <div class="detail-row">
-              <svg class="detail-ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-              <div>
-                <div class="detail-label">Funcionamento</div>
-                <div class="detail-value tabular">Todos os dias a partir das 18h (atendimento estendido nos fins de semana)</div>
-              </div>
-            </div>
-
-            <div class="detail-row">
-              <svg class="detail-ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.58 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              <div>
-                <div class="detail-label">WhatsApp e Instagram</div>
-                <div class="detail-value tabular">
-                  <a href="https://wa.me/5581993116680?text=Ol%C3%A1%2C%20O%20Big%20Burg!%20Vim%20pelo%20site." target="_blank" rel="noopener">(81) 99311-6680</a>
-                  <span> — </span>
-                  <a href="https://www.instagram.com/obigburg" target="_blank" rel="noopener">@obigburg</a>
+              <div class="info-row">
+                <svg class="info-ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <div>
+                  <div class="info-label">Horário de funcionamento</div>
+                  <div class="info-value tabular">Todos os dias a partir das 18h</div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="band-actions">
-            <a href="https://www.google.com/maps/search/?api=1&query=Av.+Rui+Barbosa+282+Mauricio+de+Nassau+Caruaru+PE" target="_blank" rel="noopener" class="btn btn-light">Ver rota no Google Maps</a>
-            <a href="https://wa.me/5581993116680?text=Ol%C3%A1%2C%20O%20Big%20Burg!%20Vim%20pelo%20site." target="_blank" rel="noopener" class="btn btn-light-outline">Falar no WhatsApp</a>
-          </div>
-        </div>
-
-        <div id="duvidas">
-          <h2 class="section-heading">Perguntas rápidas</h2>
-          <div class="faq-list">
-            <details class="faq-item" open>
-              <summary>
-                <span>Como faço meu pedido?</span>
-                <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
-              </summary>
-              <div class="faq-answer">
-                <p>Você escolhe os lanches, adicionais e a forma de recebimento direto no cardápio oficial do Goomer, sem baixar aplicativo.</p>
-                <a href="https://www.goomer.app/o-big-burg" target="_blank" rel="noopener">Abrir cardápio no Goomer</a>
-              </div>
-            </details>
-
-            <details class="faq-item">
-              <summary>
-                <span>Qual o horário de atendimento?</span>
-                <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
-              </summary>
-              <div class="faq-answer">
-                <p>Abrimos todos os dias a partir das 18h, com atendimento estendido nos finais de semana para delivery e retirada.</p>
-              </div>
-            </details>
-
-            <details class="faq-item">
-              <summary>
-                <span>Posso retirar no balcão?</span>
-                <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
-              </summary>
-              <div class="faq-answer">
-                <p>Sim. Ao finalizar seu pedido no Goomer, basta selecionar retirada no local e passar na Av. Rui Barbosa, 282, Maurício de Nassau.</p>
-              </div>
-            </details>
-
-            <details class="faq-item">
-              <summary>
-                <span>Quais formas de pagamento vocês aceitam?</span>
-                <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
-              </summary>
-              <div class="faq-answer">
-                <p>Aceitamos Pix, cartões de crédito e débito e dinheiro. Você escolhe a opção na hora de concluir o pedido.</p>
-              </div>
-            </details>
+          <div class="contact-stack">
+            <div class="contact-title">Contato direto</div>
+            <div class="contact-meta">
+              <a href="https://wa.me/5581993116680?text=Ol%C3%A1%2C%20O%20Big%20Burg!%20Vim%20pelo%20site." target="_blank" rel="noopener" class="tabular">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <span>WhatsApp (81) 99311-6680</span>
+              </a>
+              <a href="https://www.instagram.com/obigburg" target="_blank" rel="noopener">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                <span>Instagram @obigburg</span>
+              </a>
+            </div>
+            <a href="https://www.goomer.app/o-big-burg" target="_blank" rel="noopener" class="btn btn-primary" style="width: 100%;">Abrir Cardápio no Goomer</a>
           </div>
         </div>
       </div>
@@ -867,31 +1015,29 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <span>O Big Burg — Av. Rui Barbosa, 282, Maurício de Nassau, Caruaru - PE</span>
-      <div class="footer-links">
-        <a href="https://www.goomer.app/o-big-burg" target="_blank" rel="noopener">Cardápio no Goomer</a>
-        <a href="https://www.instagram.com/obigburg" target="_blank" rel="noopener">Instagram @obigburg</a>
-        <a href="https://wa.me/5581993116680?text=Ol%C3%A1%2C%20O%20Big%20Burg!%20Vim%20pelo%20site." target="_blank" rel="noopener" class="tabular">WhatsApp (81) 99311-6680</a>
-      </div>
+      <span>Todos os dias a partir das 18h</span>
     </div>
   </footer>
 
+  <!-- 6. Barra fixa inferior no Mobile -->
   <div class="mobile-bar">
-    <a href="https://wa.me/5581993116680?text=Ol%C3%A1%2C%20O%20Big%20Burg!%20Vim%20pelo%20site." target="_blank" rel="noopener" class="btn btn-secondary btn-sm">WhatsApp</a>
-    <a href="https://www.goomer.app/o-big-burg" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Pedir no Goomer</a>
+    <a href="https://www.goomer.app/o-big-burg" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Abrir Cardápio</a>
+    <a href="https://wa.me/5581993116680?text=Ol%C3%A1%2C%20O%20Big%20Burg!%20Vim%20pelo%20site." target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+      <span>WhatsApp</span>
+    </a>
   </div>
 
   <script>
     (function () {
       var hour = new Date().getHours();
-      var mark = document.getElementById("statusMark");
-      var text = document.getElementById("statusText");
+      var el = document.getElementById("heroStatus");
       if (hour >= 18 || hour < 2) {
-        text.textContent = "Aberto agora para delivery e retirada";
+        el.textContent = "Aberto agora para pedidos, Maurício de Nassau";
       } else {
-        mark.classList.add("soon");
-        text.textContent = "Abre hoje às 18h na Av. Rui Barbosa";
+        el.textContent = "Aberto hoje a partir das 18h, Maurício de Nassau";
       }
     })();
   </script>
 </body>
-</html>
+  </html>
